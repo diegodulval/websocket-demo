@@ -1,0 +1,8 @@
+{
+    "apps": [
+        {
+            "name": "WebSocket",
+            "script": "./run.sh"
+        }
+    ]
+}
