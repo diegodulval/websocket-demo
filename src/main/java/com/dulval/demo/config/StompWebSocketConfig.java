@@ -13,13 +13,16 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @Configuration
 @EnableWebSocket
 public class StompWebSocketConfig implements WebSocketConfigurer {
-    
+
     private static final Logger logger = LoggerFactory.getLogger(StompWebSocketConfig.class);
-    
+
+    private final String[] origin = {"*"};
+
+    @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new SocketHandler(), "/name").setAllowedOrigins("*");
+        registry.addHandler(new SocketHandler(), "/name").setAllowedOrigins(origin);
         registry.addHandler(new ProtocolBufferSocketHandler(), "/protobuf");
-        registry.addHandler(new BinarySocketHandler(), "/binary");
+        registry.addHandler(new BinarySocketHandler(), "/binary").setAllowedOrigins(origin);
     }
-    
+
 }
