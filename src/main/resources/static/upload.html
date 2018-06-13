@@ -6,7 +6,7 @@
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
     <script src="/jquery-1.10.2.min.js"></script>
-    <script src="/app.js"></script>
+    <script src="/BinaryWSClient.js"></script>
 </head>
 
 <body>
@@ -29,8 +29,8 @@
             <div class="col-md-6">
                 <form class="form-inline">
                     <div class="form-group">
-                        <label for="name">Qual o seu nome?</label>
-                        <input type="text" id="name" class="form-control" placeholder="Escreva seu nome aqui...">
+                        <label for="file">Imagens</label>
+                        <input type="file" id="file" class="form-control" accept="image/*" placeholder="Escolha uma imagem da sua galeria...">
                     </div>
                     <button id="send" class="btn btn-default" type="submit">Enviar</button>
                 </form>
@@ -41,7 +41,7 @@
                 <table id="conversation" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Bem Vindos</th>
+                            <th>Imagens</th>
                         </tr>
                     </thead>
                     <tbody id="greetings">
