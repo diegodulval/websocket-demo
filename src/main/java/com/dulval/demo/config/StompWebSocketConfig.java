@@ -3,6 +3,7 @@ package com.dulval.demo.config;
 import com.dulval.demo.websocket.BinarySocketHandler;
 import com.dulval.demo.websocket.ProtocolBufferSocketHandler;
 import com.dulval.demo.websocket.SocketHandler;
+import com.dulval.demo.websocket.StreamSocketHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,7 @@ public class StompWebSocketConfig implements WebSocketConfigurer {
         registry.addHandler(new SocketHandler(), "/name").setAllowedOrigins(origin);
         registry.addHandler(new ProtocolBufferSocketHandler(), "/protobuf");
         registry.addHandler(new BinarySocketHandler(), "/binary").setAllowedOrigins(origin);
+        registry.addHandler(new StreamSocketHandler(), "/room");
     }
 
 }
