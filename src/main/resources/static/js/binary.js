@@ -15,7 +15,7 @@ function connect() {
   let uploadSessionId = getUniqueSessionId(new Date().getTime);
   console.log("WSClient Conectado " + uploadSessionId);
   ws = new WebSocket(
-    "ws://192.168.20.26:7000/binary?uploadSessionId=" + uploadSessionId
+    "wss://192.168.20.26:8443/binary?uploadSessionId=" + uploadSessionId
   );
 
   ws.onmessage = function(data) {

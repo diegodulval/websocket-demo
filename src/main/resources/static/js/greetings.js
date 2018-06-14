@@ -11,7 +11,7 @@ function setConnected(connected) {
 }
 
 function connect() {
-  ws = new WebSocket("ws://159.65.233.106:7000/name");
+  ws = new WebSocket("wss://192.168.20.26:8443/name");
   ws.onmessage = function(data) {
     showGreeting(data.data);
   };
