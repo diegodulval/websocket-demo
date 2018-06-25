@@ -21,7 +21,7 @@ public class StompWebSocketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new SocketHandler(), "/name").setAllowedOrigins(origin);
+        registry.addHandler(new SocketHandler(), "/").setAllowedOrigins(origin);
         registry.addHandler(new ProtocolBufferSocketHandler(), "/protobuf");
         registry.addHandler(new BinarySocketHandler(), "/binary").setAllowedOrigins(origin);
         registry.addHandler(new StreamSocketHandler(), "/room");
